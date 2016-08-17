@@ -45,7 +45,7 @@ public class Producter implements Runnable {
 					e.printStackTrace();
 				}
 
-				// Consumer.class.notify();
+				//Consumer.class.notify();
                 //consume_con.signalAll();
 				consume_con.signal();
 			} else {
@@ -53,6 +53,7 @@ public class Producter implements Runnable {
 
 				try {
 					product_con.await();
+                    //Consumer.class.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

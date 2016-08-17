@@ -47,11 +47,11 @@ public class WordCountTopology {
 
         public void nextTuple() {
             Collection<File> listFiles = FileUtils.listFiles(new File("/Users/wq/test/kankan/"), new String[]{"txt"}, true);
-            //把每个文件中的每一行解析出来
+            //
             for (File file : listFiles) {
                 try {
                     List<String> lines = FileUtils.readLines(file);
-                    //把每一行发射出去
+                    //
                     for (String line : lines) {
                         this.collector.emit(new Values(line));
                     }
@@ -65,7 +65,7 @@ public class WordCountTopology {
 
 
         public void declareOutputFields(OutputFieldsDeclarer declarer) {
-            //Fields是一个field的List
+            //
             declarer.declare(new Fields("line"));
         }
     }
@@ -83,11 +83,11 @@ public class WordCountTopology {
 
 
         public void execute(Tuple tuple) {
-            //读取tuple
+            //
             String line = tuple.getStringByField("line");
-            //拆分每一行，得到一个个单词
+            //
             String[] words = line.split("\\s");
-            //把单词发射出去
+            //
             for (String word : words) {
                 this.collector.emit(new Values(word));
             }
@@ -115,9 +115,9 @@ public class WordCountTopology {
         Map<String, Integer> countMap = new HashMap<String, Integer>();
 
         public void execute(Tuple tuple) {
-            //读取tuple
+            //
             String word = tuple.getStringByField("word");
-            //保存每个单词
+            //
             Integer value = countMap.get(word);
             if (value == null) {
                 value = 0;

@@ -32,7 +32,7 @@ public class Producter implements Runnable {
                     Food food = new Food((num++) + "");
                     foods.add(food);
                     System.out.println(Thread.currentThread().getName()
-                            + ": producter" + food.getId() + "producting");
+                            + ": producter" + food.getId() + " producting");
                     Random ran = new Random();
                     int i = ran.nextInt(300);
                     try {

@@ -82,6 +82,7 @@ public class ClusterStormTopologyAck
 		public void fail(Object msgId) {
 			super.fail(msgId);
 			System.out.println("调用了fail "+msgId);
+            //this.collector.emit(new Values(msgId));
 		}
 	}
 	
@@ -126,7 +127,7 @@ public class ClusterStormTopologyAck
 
 		public void declareOutputFields(OutputFieldsDeclarer arg0) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 	}
@@ -134,7 +135,7 @@ public class ClusterStormTopologyAck
     public static void main( String[] args ) throws AlreadyAliveException, InvalidTopologyException 
     {
         final TopologyBuilder builder = new TopologyBuilder();
-        builder.setSpout("input", new DataSourceSpout());
+        builder.setSpout("input", new DataSourceSpout()).setNumTasks(4);
         builder.setBolt("sum", new SumBolt(), 3).allGrouping("input");
         
         final Config config = new Config();

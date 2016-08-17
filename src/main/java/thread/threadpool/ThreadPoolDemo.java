@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolDemo {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
+        int[] arr = new int[2];
+        int[] a = {1,2,3};
 
-		int processors = Runtime.getRuntime().availableProcessors();// get core num
+        int processors = Runtime.getRuntime().availableProcessors();// get core num
 		// System.out.println("pro : " + processors);
 
 		ExecutorService fixedThreadPool = Executors

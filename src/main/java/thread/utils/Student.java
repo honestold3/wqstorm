@@ -41,7 +41,7 @@ public class Student implements Runnable {
 
     private void doExercise3() {
         try {
-            long duration = (long) (Math.random() * 10);
+            long duration = (long) (Math.random() * 3);
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -50,7 +50,7 @@ public class Student implements Runnable {
 
     private void doExercise2() {
         try {
-            long duration = (long) (Math.random() * 10);
+            long duration = (long) (Math.random() * 3);
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class Student implements Runnable {
 
     private void doExercise1() {
         try {
-            long duration = (long) (Math.random() * 10);
+            long duration = (long) (Math.random() * 3);
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException e) {
             e.printStackTrace();

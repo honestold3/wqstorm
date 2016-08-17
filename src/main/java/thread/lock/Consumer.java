@@ -40,7 +40,7 @@ public class Consumer implements Runnable {
 
 					TimeUnit.MILLISECONDS.sleep(i);
 					foods.remove(0);
-					// Consumer.class.notify();
+					//Consumer.class.notify();
 					product_con.signal();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -49,6 +49,7 @@ public class Consumer implements Runnable {
 				System.out.println(Thread.currentThread().getName()+ ":consumer finish!");
 				try {
 					consume_con.await();
+                    //Consumer.class.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

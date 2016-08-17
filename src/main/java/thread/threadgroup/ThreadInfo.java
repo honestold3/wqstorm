@@ -15,8 +15,9 @@ public class ThreadInfo {
 		});
 		
 		t1.start();
-		
-		
+
+		double  a = (double) 3/2;
+		System.out.println(a);
 		System.out.println(t1.getId());
 		System.out.println(t1.getName());
 		System.out.println(t1.getPriority());//1-10
